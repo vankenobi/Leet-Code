@@ -29,11 +29,9 @@ class Solution(object):
                 
         return True
 
-        
-        
-        
-                
-
 s1 =  Solution()
 result = s1.carPooling([[4,5,6],[6,4,7],[4,3,5],[2,3,5]],13)
 print(result)
+
+# You can see the question from this link 
+# https://leetcode.com/problems/car-pooling/
