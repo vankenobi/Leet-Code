@@ -1,22 +1,24 @@
-from itertools import count
-from math import remainder
+class Solution(object):
+    def isValid(self, s):
+        """
+        :type s: str
+        :rtype: bool
+        """
+        left_curl = 0
+        left_rect = 0
+        left_curv = 0
+        count = len(s) - 1
+        s = list(s.replace(" ",""))
+        while(count != 0):
+            if (s.pop() == "}"):
+                left_curl +=1
+            if (s.pop() == "]"):
+                left_curl +=1
+            if (s.pop() == "]"):
+                left_curl +=1    
+
+s1 = Solution()
+result = s1.isValid('{ { } [ ] [ [ [ ] ] ] }')
 
 
-a = [0,1,5,10,50,100,500,1000]
 
-# 7'yi bulmak için liste içerisindeki hangi iki sayıyı toplamalıyım.
-result = ""
-remainder = 2856
-counter = 0
-
-while(remainder !=0):
-    if(counter == len(a)-1):
-        print(a[counter]," Eklendi.")
-        remainder = remainder - a[counter]
-        counter = 0
-    elif(remainder >= a[counter] and remainder < a[counter+1]):
-        print(a[counter]," Eklendi.")
-        remainder = remainder - a[counter]
-    counter += 1
-
-        
