@@ -5,20 +5,24 @@ class Solution(object):
         :type cost: List[int]
         :rtype: int
         """
+        
+        gas2 = gas * 2
+        cost2 = cost * 2
         potantial_begins = [] 
         circle = False
         count = 0
+        
         list_of_lenght = len(gas) # You can write if you want cost. It doesnt matter
+
         for i in range(len(gas)):
             if(gas[i] - cost[i] > 0):
                 potantial_begins.append(i)
 
-        for i in potantial_begins:
-            current_gas = 0
-            count = 0 
-            while(circle == True and count == list_of_lenght):
-                
-                
+        if (len(potantial_begins) == 0):
+            return -1
+        
+        while(1):
+            pass
 
         return potantial_begins
 

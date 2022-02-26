@@ -1,11 +1,19 @@
-a = [1,2,3,4,5,6,7,8,9]
-
-count = 0
-circle = 0
-while(count <= 9):
-    print(a[count])
-    count += 1
-    if(count == 9):
+class Solution(object):
+    def removeElement(self, nums, val):
+        """
+        :type nums: List[int]
+        :type val: int
+        :rtype: int
+        """
         count = 0
-        circle += 1
-        print(circle)
+        list_of_lenght = len(nums)
+        for i in range(0,list_of_lenght-1):
+            if(nums[i] == val):
+                nums.pop(i)
+                nums.append(0)
+                count += 1
+        return int(list_of_lenght-count),list(nums)
+
+s1 = Solution()
+result = s1.removeElement([3,2,2,3],3)
+print(result)
